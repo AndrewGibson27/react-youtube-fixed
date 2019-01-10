@@ -1,3 +1,3 @@
-import Foo from './Foo';
+import Foo from './components/Foo.js';
 
 export default Foo;
