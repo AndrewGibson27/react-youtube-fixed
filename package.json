@@ -1,0 +1,14 @@
+{
+  "name": "foodir",
+  "version": "0.1.0",
+  "description": "Coming soon",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "sideEffects": false
+}
