@@ -7,3 +7,5 @@ lib/
 *.log
 !.gitignore
 !.babelrc.js
+!.eslintrc.json
+!.prettierrc.json
