@@ -1,7 +1,3 @@
-interface FooInter {
-  bleh: string;
-}
+import React from 'react';
 
-const foo: FooInter = { bleh: 'hi' };
-
-export default foo;
+export default () => <p>Hi!</p>;

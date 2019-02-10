@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+
+  <body>
+    <div id="attach"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@16/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="./dist/dev.js"></script>
+  <script>
+    const e = React.createElement;
+    ReactDOM.render(e(Foo.Foo), document.getElementById('attach'));
+  </script>
+</html>
