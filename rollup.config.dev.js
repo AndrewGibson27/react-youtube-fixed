@@ -13,9 +13,9 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'dist/dev.js',
+      file: 'dist/rfyt.dev.js',
       format: 'umd',
-      name: 'Foo',
+      name: 'ReactFixedYouTube',
       indent: false,
       globals: { react: 'React', 'react-dom': 'ReactDOM' },
     },
@@ -30,7 +30,7 @@ export default [
       }),
       commonjs({
         namedExports: {
-          'node_modules/react/index.js': ['React'],
+          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
           'node_modules/react-dom/index.js': ['render'],
         },
       }),

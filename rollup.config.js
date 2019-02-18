@@ -13,7 +13,7 @@ export default [
   // CommonJS
   {
     input: 'src/index.tsx',
-    output: { file: 'lib/foo.js', format: 'cjs', indent: false },
+    output: { file: 'lib/rfyt.js', format: 'cjs', indent: false },
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
@@ -24,7 +24,7 @@ export default [
   // ES
   {
     input: 'src/index.tsx',
-    output: { file: 'es/foo.js', format: 'es', indent: false },
+    output: { file: 'es/rfyt.js', format: 'es', indent: false },
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
@@ -36,7 +36,7 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'es/foo.mjs',
+      file: 'es/rfyt.mjs',
       format: 'es',
       indent: false,
       globals: { react: 'React', 'react-dom': 'ReactDOM' },
@@ -50,7 +50,7 @@ export default [
       }),
       commonjs({
         namedExports: {
-          'node_modules/react/index.js': ['React'],
+          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
           'node_modules/react-dom/index.js': ['render'],
         },
       }),
@@ -72,9 +72,9 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'dist/foo.min.js',
+      file: 'dist/rfyt.min.js',
       format: 'umd',
-      name: 'Foo',
+      name: 'ReactFixedYouTube',
       indent: false,
       globals: { react: 'React', 'react-dom': 'ReactDOM' },
     },
@@ -88,7 +88,7 @@ export default [
       }),
       commonjs({
         namedExports: {
-          'node_modules/react/index.js': ['React'],
+          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
           'node_modules/react-dom/index.js': ['render'],
         },
       }),

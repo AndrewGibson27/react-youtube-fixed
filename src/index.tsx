@@ -1,13 +1,3 @@
-import Foo from './components/Foo';
+import { YouTubeWrapper, YouTubeContext } from './contexts/YouTube';
 
-const foo = 12;
-
-interface Bleh {
-  hi?: number;
-}
-
-const zzz: Bleh = {
-  hi: 12,
-};
-
-export { foo, zzz, Foo };
+export { YouTubeWrapper, YouTubeContext };
