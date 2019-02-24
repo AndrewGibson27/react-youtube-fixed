@@ -4,16 +4,16 @@ import React, { useState, createContext } from 'react';
 
 interface YouTubeWrapperProps {
   children: React.ReactNode;
-  initialVideoId?: number | null;
+  initialVideoId?: string | null;
   initialIsPlaying?: boolean;
   initialIsVisible?: boolean;
 }
 
 interface YouTubeContext {
-  videoId: number;
+  videoId: string;
   isPlaying: boolean;
   isVisible: boolean;
-  setVideoId: React.Dispatch<React.SetStateAction<number>>;
+  setVideoId: React.Dispatch<React.SetStateAction<string>>;
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
