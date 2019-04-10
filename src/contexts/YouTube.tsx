@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-
 import React, { useState, createContext } from 'react';
 
 interface YouTubeWrapperProps {
@@ -23,8 +21,8 @@ const YouTubeWrapper: React.SFC<YouTubeWrapperProps> = ({
   children,
   initialVideoId = null,
   initialIsPlaying = false,
-  initialIsVisible = false,
-}) => {
+  initialIsVisible = true,
+}): JSX.Element => {
   const [videoId, setVideoId] = useState(initialVideoId);
   const [isPlaying, setIsPlaying] = useState(initialIsPlaying);
   const [isVisible, setIsVisible] = useState(initialIsVisible);

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Fixed YouTube demo</title>
+  </head>
+
+  <body>
+    <div id="attach"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@16/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <script src="./dist/rfyt.dev.js"></script>
+  <script type="text/babel">
+    const { YouTubeWrapper, YouTubeContext, FixedYouTube } = ReactFixedYouTube;
+
+    const Controller = () => {
+      const ytContextValue = React.useContext(YouTubeContext);
+      const { setVideoId, setIsPlaying, setIsVisible } = ytContextValue;
+
+      return (
+        <div>
+          <button
+            onClick={() => {
+              setVideoId('XgtopghkBZc');
+            }}
+          >
+            Create video
+          </button>
+
+          <button
+            onClick={() => {
+              setVideoId(null);
+            }}
+          >
+            Destroy video
+          </button>
+
+          <button
+            onClick={() => {
+              setIsPlaying(false);
+            }}
+          >
+            Pause video
+          </button>
+
+          <button
+            onClick={() => {
+              setIsPlaying(true);
+            }}
+          >
+            Un-pause video
+          </button>
+
+          <button
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            Hide video
+          </button>
+
+          <button
+            onClick={() => {
+              setIsVisible(true);
+            }}
+          >
+            Show video
+          </button>
+        </div>
+      );
+    };
+
+    const App = () => (
+      <main>
+        <Controller />
+        <FixedYouTube />
+      </main>
+    );
+
+    ReactDOM.render(
+      <YouTubeWrapper>
+        <App />
+      </YouTubeWrapper>,
+      document.getElementById('attach')
+    );
+  </script>
+</html>

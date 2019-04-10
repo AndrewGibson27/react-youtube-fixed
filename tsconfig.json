@@ -4,7 +4,7 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "es6",
-    "target": "es5",
+    "target": "ESNext",
     "jsx": "react",
     "declaration": true,
     "typeRoots": ["node_modules/@types"],
