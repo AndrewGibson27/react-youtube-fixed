@@ -5,7 +5,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import replace from 'rollup-plugin-replace';
+import postcss from 'rollup-plugin-postcss';
 
 import pkg from './package.json';
 
@@ -18,7 +18,13 @@ export default [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    plugins: [typescript()],
+    plugins: [
+      typescript(),
+      postcss({
+        extract: true,
+        minimize: true,
+      }),
+    ],
   },
 
   // ES
@@ -29,7 +35,13 @@ export default [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
     ],
-    plugins: [typescript()],
+    plugins: [
+      typescript(),
+      postcss({
+        extract: true,
+        minimize: true,
+      }),
+    ],
   },
 
   // ES for browsers
@@ -50,12 +62,15 @@ export default [
       }),
       commonjs({
         namedExports: {
-          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
+          'node_modules/react/index.js': [
+            'React',
+            'createContext',
+            'useState',
+            'useRef',
+            'useEffect',
+          ],
           'node_modules/react-dom/index.js': ['render'],
         },
-      }),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       terser({
         compress: {
@@ -64,6 +79,10 @@ export default [
           unsafe_comps: true,
           warnings: false,
         },
+      }),
+      postcss({
+        extract: true,
+        minimize: true,
       }),
     ],
   },
@@ -86,15 +105,6 @@ export default [
       typescript({
         exclude: 'node_modules/**',
       }),
-      commonjs({
-        namedExports: {
-          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
-          'node_modules/react-dom/index.js': ['render'],
-        },
-      }),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-      }),
       terser({
         compress: {
           pure_getters: true,
@@ -102,6 +112,10 @@ export default [
           unsafe_comps: true,
           warnings: false,
         },
+      }),
+      postcss({
+        extract: true,
+        minimize: true,
       }),
     ],
   },

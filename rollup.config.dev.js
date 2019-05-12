@@ -3,8 +3,7 @@
 import serve from 'rollup-plugin-serve';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
+import postcss from 'rollup-plugin-postcss';
 
 import pkg from './package.json';
 
@@ -28,15 +27,7 @@ export default [
       typescript({
         exclude: 'node_modules/**',
       }),
-      commonjs({
-        namedExports: {
-          'node_modules/react/index.js': ['React', 'createContext', 'useState'],
-          'node_modules/react-dom/index.js': ['render'],
-        },
-      }),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify('development'),
-      }),
+      postcss(),
     ],
   },
 ];

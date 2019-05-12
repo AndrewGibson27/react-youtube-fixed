@@ -12,6 +12,9 @@
     "lint": "eslint src/** --ext .ts,.tsx",
     "dev": "NODE_ENV=development rollup -c rollup.config.dev.js"
   },
+  "dependencies": {
+    "reframe.js": "^2.2.5"
+  },
   "peerDependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
@@ -36,7 +39,7 @@
     "rollup": "^1.1.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-serve": "^0.6.1",
     "rollup-plugin-terser": "^4.0.2",
     "rollup-plugin-typescript2": "^0.19.2",
@@ -56,5 +59,7 @@
   "engines": {
     "node": ">= 8.6.0"
   },
-  "sideEffects": false
+  "sideEffects": [
+    "*.css"
+  ]
 }

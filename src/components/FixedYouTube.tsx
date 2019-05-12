@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+import reframe from 'reframe.js';
 
 import { YouTubeContext } from '../contexts/YouTube';
 import { Constructable } from '../interfaces/index';
 import appendYouTubeScript from '../utils/append-youtube-script';
+
+import './styles.css';
 
 interface YTOnWindow {
   Player: Constructable<YT.Player>;
@@ -45,6 +48,7 @@ const FixedYouTube: React.SFC<FixedYouTubeProps> = ({
       events: {
         onReady: () => {
           setVideo();
+          reframe(player.getIframe());
         },
       },
     };
@@ -101,7 +105,11 @@ const FixedYouTube: React.SFC<FixedYouTubeProps> = ({
 
   return (
     <aside style={{ display: isVisible ? 'block' : 'none' }}>
-      <div ref={attachEl} />
+      <div className="rfyt-container">
+        <div>
+          <div ref={attachEl} />
+        </div>
+      </div>
     </aside>
   );
 };
