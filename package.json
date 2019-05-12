@@ -1,16 +1,36 @@
 {
-  "name": "react-fixed-youtube",
-  "version": "0.1.0",
+  "name": "@andrewgibson/react-fixed-youtube",
+  "version": "1.0.0",
   "description": "Control fixed-position YouTube videos from anywhere in your React application",
   "author": "Andrew Gibson <atgibson27@gmail.com>",
   "license": "MIT",
   "main": "lib/rfyt.js",
   "unpkg": "dist/rfyt.min.js",
   "module": "es/rfyt.js",
+  "repository": "github:andrewgibson27/react-fixed-youtube",
+  "bugs": "https://github.com/andrewgibson27/react-fixed-youtube/issues",
+  "keywords": [
+    "react",
+    "youtube",
+    "fixed",
+    "context",
+    "responsive",
+    "video",
+    "player"
+  ],
+  "files": [
+    "dist",
+    "es",
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "lint": "eslint src/** --ext .ts,.tsx",
-    "dev": "NODE_ENV=development rollup -c rollup.config.dev.js"
+    "dev": "NODE_ENV=development rollup -c rollup.config.dev.js",
+    "test": "echo \"No test specified\"",
+    "prepare": "npm run lint && npm test && npm run build",
+    "release": "np --no-yarn"
   },
   "dependencies": {
     "reframe.js": "^2.2.5"
@@ -33,6 +53,7 @@
     "eslint-plugin-react": "^7.12.3",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
+    "np": "^5.0.1",
     "prettier": "^1.15.3",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
@@ -57,9 +78,11 @@
     ]
   },
   "engines": {
-    "node": ">= 8.6.0"
+    "node": ">= 8.6.0",
+    "npm": ">= 6.8.0"
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "npmName": "react-fixed-youtube"
 }
