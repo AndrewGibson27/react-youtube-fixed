@@ -1,6 +1,6 @@
 {
   "name": "@andrewgibson/react-fixed-youtube",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Control fixed-position YouTube videos from anywhere in your React application",
   "author": "Andrew Gibson <atgibson27@gmail.com>",
   "license": "MIT",
@@ -21,10 +21,10 @@
   "files": [
     "dist",
     "es",
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
+    "clean": "rimraf dist es lib",
     "build": "NODE_ENV=production rollup -c",
     "lint": "eslint src/** --ext .ts,.tsx",
     "dev": "NODE_ENV=development rollup -c rollup.config.dev.js",
@@ -57,13 +57,14 @@
     "prettier": "^1.15.3",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "rimraf": "^2.6.3",
     "rollup": "^1.1.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-serve": "^0.6.1",
     "rollup-plugin-terser": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.19.2",
+    "rollup-plugin-typescript2": "^0.21.0",
     "typescript": "^3.3.3"
   },
   "husky": {
