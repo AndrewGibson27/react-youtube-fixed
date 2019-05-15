@@ -7,8 +7,8 @@
   "main": "lib/rfyt.js",
   "unpkg": "dist/rfyt.min.js",
   "module": "es/rfyt.js",
-  "repository": "github:andrewgibson27/react-fixed-youtube",
-  "bugs": "https://github.com/andrewgibson27/react-fixed-youtube/issues",
+  "repository": "github:andrewgibson27/react-youtube-fixed",
+  "bugs": "https://github.com/andrewgibson27/react-youtube-fixed/issues",
   "keywords": [
     "react",
     "youtube",
