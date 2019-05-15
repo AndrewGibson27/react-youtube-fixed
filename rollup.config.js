@@ -13,7 +13,7 @@ export default [
   // CommonJS
   {
     input: 'src/index.tsx',
-    output: { file: 'lib/rfyt.js', format: 'cjs', indent: false },
+    output: { file: 'lib/rytf.js', format: 'cjs', indent: false },
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
@@ -30,7 +30,7 @@ export default [
   // ES
   {
     input: 'src/index.tsx',
-    output: { file: 'es/rfyt.js', format: 'es', indent: false },
+    output: { file: 'es/rytf.js', format: 'es', indent: false },
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),
@@ -48,7 +48,7 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'es/rfyt.mjs',
+      file: 'es/rytf.mjs',
       format: 'es',
       indent: false,
       globals: { react: 'React', 'react-dom': 'ReactDOM' },
@@ -91,7 +91,7 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'dist/rfyt.min.js',
+      file: 'dist/rytf.min.js',
       format: 'umd',
       name: 'ReactFixedYouTube',
       indent: false,

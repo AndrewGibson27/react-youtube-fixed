@@ -12,7 +12,7 @@ export default [
   {
     input: 'src/index.tsx',
     output: {
-      file: 'dist/rfyt.dev.js',
+      file: 'dist/rytf.dev.js',
       format: 'umd',
       name: 'ReactFixedYouTube',
       indent: false,
