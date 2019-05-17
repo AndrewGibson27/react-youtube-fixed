@@ -10,13 +10,16 @@ Uses:
 
 ## Installation
 
-**NPM**
+### NPM
+
 `npm i @andrewgibson/react-youtube-fixed --save`
 
-**Yarn**
+### Yarn
+
 `yarn add @andrewgibson/react-youtube-fixed`
 
-**CDN**
+### CDN
+
 `<script src="https://unpkg.com/@andrewgibson/react-youtube-fixed@latest/dist/rytf.min.js"></script>`
 
 ## Usage
@@ -114,10 +117,12 @@ The `<YouTubeWrapper />` component has a few optional props:
 
 A small stylesheet positions the player and makes it go full width on smaller screens.
 
-**Bundler usage**
+### Bundler usage
+
 `import '@andrewgibson/react-youtube-fixed/dist/rytf.min.css'`;
 
-**CDN usage**
+### CDN usage
+
 `<link href="https://unpkg.com/@andrewgibson/react-youtube-fixed@latest/dist/rytf.min.css" rel="stylesheet" type="text/css">`
 
 ## Development
