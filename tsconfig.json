@@ -4,10 +4,11 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "es6",
-    "target": "ESNext",
+    "target": "es5",
     "jsx": "react",
     "declaration": true,
     "typeRoots": ["node_modules/@types"],
-    "types": ["youtube"]
+    "types": ["youtube"],
+    "lib": ["dom", "es5", "es2015.promise"]
   }
 }
