@@ -10,8 +10,11 @@ Uses:
 
 ## Installation
 
-`npm i @andrewgibson/react-youtube-fixed --save`
-`yarn add @andrewgibson/react-youtube-fixed`
+NPM: `npm i @andrewgibson/react-youtube-fixed --save`
+
+Yarn: `yarn add @andrewgibson/react-youtube-fixed`
+
+CDN: `<script src="https://unpkg.com/@andrewgibson/react-youtube-fixed@latest/dist/rytf.min.js"></script>`
 
 ## Usage
 
@@ -85,7 +88,7 @@ const Controller = () => {
 const App = () => (
   <div>
     <Controller />
-    <FixedYouTube /> // contains the player and accesses context
+    <FixedYouTube />
   </div>
 );
 
@@ -96,3 +99,30 @@ render(
   document.getElementById('foo')
 );
 ```
+
+## Initialization
+
+The `<YouTubeWrapper />` component has a few optional props:
+
+- `initialVideoId (string, default: null)`: If you want a video to play immediately when `FixedYouTube` is rendered, send this.
+- `initialIsVisible (boolean, default: true)`: Whether the player should be hidden at first.
+
+## Styles
+
+A small stylesheet positions the player and makes it go full width on smaller screens.
+
+Bundler usage: `import '@andrewgibson/react-youtube-fixed/dist/rytf.min.css'`;
+
+CDN usage: `<link href="https://unpkg.com/@andrewgibson/react-youtube-fixed@latest/dist/rytf.min.css" rel="stylesheet" type="text/css">`
+
+## Development
+
+You can run `npm run dev` to fire up a development server. The `index.html` file in this repo contains the bundle produced by that command.
+
+## Browser support
+
+We tell TypeScript to compile down to ES5. So it should work even on IE 11!
+
+## License
+
+MIT
