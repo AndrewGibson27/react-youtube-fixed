@@ -131,7 +131,7 @@ You can run `npm run dev` to fire up a development server. The `index.html` file
 
 ## Browser support
 
-We tell TypeScript to compile down to ES5. So it should work even on IE 11!
+We tell TypeScript to compile down to ES5, but you'll need promises for this thing to work.
 
 ## License
 
