@@ -1,6 +1,6 @@
 {
   "name": "@andrewgibson/react-youtube-fixed",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Control fixed-position YouTube videos from anywhere in your React application",
   "author": "Andrew Gibson <atgibson27@gmail.com>",
   "license": "MIT",
