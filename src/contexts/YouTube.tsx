@@ -3,7 +3,6 @@ import React, { useState, createContext } from 'react';
 interface YouTubeWrapperProps {
   children: React.ReactNode;
   initialVideoId?: string | null;
-  initialIsVisible?: boolean;
 }
 
 interface YouTubeContext {
@@ -19,10 +18,9 @@ const YouTubeContext = createContext<YouTubeContext | null>(null);
 const YouTubeWrapper: React.SFC<YouTubeWrapperProps> = ({
   children,
   initialVideoId = null,
-  initialIsVisible = true,
 }): JSX.Element => {
   const [videoId, setVideoId] = useState(initialVideoId);
-  const [isVisible, setIsVisible] = useState(initialIsVisible);
+  const [isVisible, setIsVisible] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
 
   return (

@@ -108,10 +108,9 @@ render(
 
 ## Initialization
 
-The `<YouTubeWrapper />` component has a few optional props:
+The `<YouTubeWrapper />` component has one optional prop:
 
-- `initialVideoId (string, default: null)`: If you want a video to play immediately when `FixedYouTube` is rendered, send this.
-- `initialIsVisible (boolean, default: true)`: Whether the player should be hidden at first.
+- `initialVideoId (string, default: null)`: If you want a video to play immediately when `FixedYouTube` is rendered, send this in.
 
 ## Styles
 
