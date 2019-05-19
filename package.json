@@ -4,9 +4,9 @@
   "description": "Control fixed-position YouTube videos from anywhere in your React application",
   "author": "Andrew Gibson <atgibson27@gmail.com>",
   "license": "MIT",
-  "main": "lib/rfyt.js",
-  "unpkg": "dist/rfyt.min.js",
-  "module": "es/rfyt.js",
+  "main": "lib/rytf.js",
+  "unpkg": "dist/rytf.min.js",
+  "module": "es/rytf.js",
   "repository": "github:andrewgibson27/react-youtube-fixed",
   "bugs": "https://github.com/andrewgibson27/react-youtube-fixed/issues",
   "keywords": [
