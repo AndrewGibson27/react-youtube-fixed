@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import reframe from 'reframe.js';
 
 import { YouTubeContext } from '../contexts/YouTube';
@@ -29,13 +29,11 @@ interface FixedYouTubeProps {
 let player: YT.Player | null = null;
 
 const FixedYouTube: React.SFC<FixedYouTubeProps> = ({
-  videoId,
-  isPlaying,
-  isVisible,
   height = 360,
   width = 640,
 }): JSX.Element => {
   const attachEl = useRef(null);
+  const { videoId, isPlaying, isVisible } = useContext(YouTubeContext);
 
   const setVideo = (): void => {
     player.loadVideoById(videoId);
@@ -52,6 +50,7 @@ const FixedYouTube: React.SFC<FixedYouTubeProps> = ({
         },
       },
     };
+
     player = new window.YT.Player(attachEl.current, opts);
   };
 
@@ -104,24 +103,12 @@ const FixedYouTube: React.SFC<FixedYouTubeProps> = ({
   );
 
   return (
-    <aside style={{ display: isVisible ? 'block' : 'none' }}>
+    <div style={{ display: isVisible ? 'block' : 'none' }}>
       <div className="rfyt-container">
-        <div>
-          <div ref={attachEl} />
-        </div>
+        <div ref={attachEl} />
       </div>
-    </aside>
+    </div>
   );
 };
 
-export default () => (
-  <YouTubeContext.Consumer>
-    {({ videoId, isPlaying, isVisible }) => (
-      <FixedYouTube
-        videoId={videoId}
-        isPlaying={isPlaying}
-        isVisible={isVisible}
-      />
-    )}
-  </YouTubeContext.Consumer>
-);
+export default FixedYouTube;
